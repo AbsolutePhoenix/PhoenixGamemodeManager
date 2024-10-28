@@ -48,12 +48,14 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: path.resolve(__dirname, 'src/scripts'),
-        type: 'asset/resource',
+        // TypeScript files in `src/scripts` to be compiled to `.js` in `dist/scripts`
+        test: /\.ts$/,
+        include: path.resolve(__dirname, 'src/scripts'),
+        use: 'ts-loader',
+        type: 'asset/resource', // Treat as file resource for path-based import
         generator: {
-          filename: '[name][ext]',
-          outputPath: 'scripts',
-          publicPath: 'scripts/'
+          filename: 'scripts/[name].js', // Output compiled `.js` files in `dist/scripts`
+          publicPath: 'scripts/',
         },
       },
     ]

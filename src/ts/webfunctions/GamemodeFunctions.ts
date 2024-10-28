@@ -1,4 +1,4 @@
-function phoenix_openGamemodeInterface(interfaceName: string): void {
+export function openGamemodeInterface(interfaceName: string): void {
     const gamemodeSelections = document.getElementsByTagName(
         "gamemode-selection"
     ) as HTMLCollectionOf<HTMLElement>;
@@ -35,7 +35,7 @@ function phoenix_openGamemodeInterface(interfaceName: string): void {
     });
 }
 
-function phoenix_openStyleInterface(): void {
+export function openStyleInterface(): void {
     const gamemodeSelections = document.getElementsByTagName(
         "gamemode-selection"
     ) as HTMLCollectionOf<HTMLElement>;

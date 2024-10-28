@@ -16,7 +16,7 @@ export const htmlCharacterSelectionContents = `
     <div class="row no-gutters justify-content-center" id="phoenix-gamemode-container" style="display:none;">
         <div class="col-12 col-md-8" id="phoenix-gamemode-selection-button">
             <button role="button" class="btn btn-sm btn-warning btn-cloud-sign-in-back js-click-ripple-enabled"
-                data-toggle="click-ripple" onclick="phoenix_openStyleInterface();" style="overflow: hidden; position: relative; z-index: 1;">
+                data-toggle="click-ripple" onclick="game.phoenixgamemanager.openStyleInterface();" style="overflow: hidden; position: relative; z-index: 1;">
                 <i class="fa fa-fw fa-arrow-left opacity-50"></i>
                 <span class="ms-1">Go back to Category Selection</span>
             </button>
@@ -40,7 +40,7 @@ export function addCategoryToHTML(buttonClass: string, textClass: string, catego
             .join('');
 
         button.innerHTML = `
-            <button type="button" class="btn btn-lg ${buttonClass}" style="width:70%;" onclick="phoenix_openGamemodeInterface('${categoryId}')">
+            <button type="button" class="btn btn-lg ${buttonClass}" style="width:70%;" onclick="game.phoenixgamemanager.openGamemodeInterface('${categoryId}')">
                 <div class="bg-gamemode align-right" style="background-image: url('${categoryImageURL}');"></div>
                 <div class="media d-flex align-items-center push">
                     <div class="media-body text-left mr-2">
