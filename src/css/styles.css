@@ -1,0 +1,324 @@
+/* Purple */
+.btn-gamemode-mystic {
+  color: #fff;
+  background-color: #6a1b9a;
+  border-color: #8a23c8;
+}
+
+/* Orange */
+.btn-gamemode-fiery {
+  color: #fff;
+  background-color: #bf360c;
+  border-color: #f84610;
+}
+
+/* Cyan */
+.btn-gamemode-ice {
+  color: #fff;
+  background-color: #0097a7;
+  border-color: #00c4d9;
+}
+
+/* Pink */
+.btn-gamemode-charm {
+  color: #fff;
+  background-color: #ad1457;
+  border-color: #e11a71;
+}
+
+/* Teal */
+.btn-gamemode-ocean {
+  color: #fff;
+  background-color: #00695c;
+  border-color: #008878;
+}
+
+/* Gold */
+.btn-gamemode-royal {
+  color: #fff;
+  background-color: #b39447;
+  border-color: #e9c05c;
+}
+
+/* Silver */
+.btn-gamemode-metal {
+  color: #fff;
+  background-color: #616161;
+  border-color: #7e7e7e;
+}
+
+/* Maroon */
+.btn-gamemode-dawn {
+  color: #fff;
+  background-color: #800000;
+  border-color: #a60000;
+}
+
+/* Navy */
+.btn-gamemode-midnight {
+  color: #fff;
+  background-color: #001f3f;
+  border-color: #002852;
+}
+
+/* Brown */
+.btn-gamemode-earth {
+  color: #fff;
+  background-color: #5d4037;
+  border-color: #795348;
+}
+
+/* Violet */
+.btn-gamemode-violet {
+  color: #fff;
+  background-color: #7b1fa2;
+  border-color: #a028d3;
+}
+
+/* SkyBlue */
+.btn-gamemode-sky {
+  color: #fff;
+  background-color: #0288d1;
+  border-color: #03b1ff;
+}
+
+/* Coral */
+.btn-gamemode-coral {
+  color: #fff;
+  background-color: #d84315;
+  border-color: #ff571b;
+}
+
+/* Indigo */
+.btn-gamemode-indigo {
+  color: #fff;
+  background-color: #3949ab;
+  border-color: #4a5fde;
+}
+
+/* Forest */
+.btn-gamemode-forest {
+  color: #fff;
+  background-color: #1b5e20;
+  border-color: #237a2a;
+}
+
+/* Crimson */
+.btn-gamemode-crimson {
+  color: #fff;
+  background-color: #a3002f;
+  border-color: #d4003d;
+}
+
+/* Copper */
+.btn-gamemode-copper {
+  color: #fff;
+  background-color: #b87333;
+  border-color: #ef9642;
+}
+
+/* Olive */
+.btn-gamemode-olive {
+  color: #fff;
+  background-color: #808000;
+  border-color: #a6a600;
+}
+
+/* Wine */
+.btn-gamemode-wine {
+  color: #fff;
+  background-color: #722f37;
+  border-color: #943d48;
+}
+
+/* Emerald */
+.btn-gamemode-emerald {
+  color: #fff;
+  background-color: #388e3c;
+  border-color: #49b94e;
+}
+
+/* Chocolate */
+.btn-gamemode-chocolate {
+  color: #fff;
+  background-color: #8b4513;
+  border-color: #b55a19;
+}
+
+/* Turquoise */
+.btn-gamemode-turquoise {
+  color: #fff;
+  background-color: #008080;
+  border-color: #00a6a6;
+}
+
+/* Amber */
+.btn-gamemode-amber {
+  color: #fff;
+  background-color: #ff8f00;
+  border-color: #ffba00;
+}
+
+/* Slate */
+.btn-gamemode-slate {
+  color: #fff;
+  background-color: #455a64;
+  border-color: #5a7582;
+}
+
+/* Rose */
+.btn-gamemode-rose {
+  color: #fff;
+  background-color: #c2185b;
+  border-color: #fc1f76;
+}
+
+/* Purple */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-mystic {
+  color: #d885f7 !important;
+}
+
+/* Orange */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-fiery {
+  color: #ffa366 !important;
+}
+
+/* Cyan */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-ice {
+  color: #8be3f9 !important;
+}
+
+/* Pink */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-charm {
+  color: #ff80b5 !important;
+}
+
+/* Teal */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-ocean {
+  color: #5ee3cc !important;
+}
+
+/* Gold */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-royal {
+  color: #ffda73 !important;
+}
+
+/* Silver */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-metal {
+  color: #d3e0e9 !important;
+}
+
+/* Maroon */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-dawn {
+  color: #ea6d6d !important;
+}
+
+/* Navy */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-midnight {
+  color: #7a88ad !important;
+}
+
+/* Brown */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-earth {
+  color: #a0785a !important;
+}
+
+/* Violet */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-violet {
+  color: #d082f8 !important;
+}
+
+/* SkyBlue */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-sky {
+  color: #7ecbff !important;
+}
+
+/* Lime */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-lime {
+  color: #e5f773 !important;
+}
+
+/* Coral */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-coral {
+  color: #ffad91 !important;
+}
+
+/* Indigo */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-indigo {
+  color: #a1aaf5 !important;
+}
+
+/* Forest */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-forest {
+  color: #5dba6b !important;
+}
+
+/* Sand */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-sand {
+  color: #ffe0a0 !important;
+}
+
+/* Crimson */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-crimson {
+  color: #ff7373 !important;
+}
+
+/* Copper */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-copper {
+  color: #d58f57 !important;
+}
+
+/* Lavender */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-lavender {
+  color: #eac2f5 !important;
+}
+
+/* Olive */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-olive {
+  color: #b3c31e !important;
+}
+
+/* Wine */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-wine {
+  color: #b5676d !important;
+}
+
+/* Emerald */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-emerald {
+  color: #83f4b3 !important;
+}
+
+/* Chocolate */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-chocolate {
+  color: #e7a869 !important;
+}
+
+/* Turquoise */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-turquoise {
+  color: #96f3ea !important;
+}
+
+/* Amber */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-amber {
+  color: #ffe773 !important;
+}
+
+/* Peach */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-peach {
+  color: #ffdfc2 !important;
+}
+
+/* Mint */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-mint {
+  color: #c9ffc9 !important;
+}
+
+/* Slate */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-slate {
+  color: #97a5b3 !important;
+}
+
+/* Rose */
+h5.font-w600.mb-1.pt-2.font-size-lg.text-rose {
+  color: #ff60a6 !important;
+}

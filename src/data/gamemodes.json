@@ -1,0 +1,82 @@
+{
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "data": {
+    "gamemodes": [
+      {
+        "test": "test",
+        "id": "BirthdayMode",
+        "name": "???",
+        "media": "img/gamemode_bday.png",
+        "rules": [ "???", "???", "???", "???", "???" ],
+        "textClass": "text-warning",
+        "btnClass": "btn-gamemode-chaos",
+        "isPermaDeath": false,
+        "isEvent": true,
+        "endDate": 1698199200000,
+        "combatTriangle": "Hardcore",
+        "hitpointMultiplier": 696969,
+        "overrideMaxHitpoints": 1,
+        "hasRegen": true,
+        "capNonCombatSkillLevels": false,
+        "startingPage": "melvorD:Bank",
+        "startingItems": [
+          {
+            "id": "melvorF:Food_Box_I",
+            "quantity": 69
+          },
+          {
+            "id": "melvorF:Food_Box_II",
+            "quantity": 69
+          },
+          {
+            "id": "melvorF:Cooking_Apron",
+            "quantity": 69
+          },
+          {
+            "id": "melvorF:Wasteful_Ring",
+            "quantity": 69
+          }
+        ],
+        "allowSkillUnlock": false,
+        "skillUnlockCost": [],
+        "playerModifiers": {
+          "decreasedFlatMaxHitpoints": 6969696969,
+          "decreasedAttackIntervalPercent": 80,
+          "decreasedMonsterRespawnTimer": 2000
+        },
+        "enemyModifiers": {
+          "increasedAttackIntervalPercent": 1000,
+          "increasedGlobalAccuracy": 1000
+        },
+        "enemyPassives": [ "melvorF:Purity2" ],
+        "enemySpecialAttacks": [
+          "melvorD:Dragonbreath",
+          "melvorD:LesserDragonbreath",
+          "melvorD:Firebreathing",
+          "melvorD:Volley"
+        ],
+        "hasTutorial": false,
+        "description": "???",
+        "startingSkills": [
+          "melvorD:Attack",
+          "melvorD:Strength",
+          "melvorD:Defence",
+          "melvorD:Hitpoints",
+          "melvorD:Ranged",
+          "melvorD:Magic",
+          "melvorD:Prayer",
+          "melvorD:Slayer",
+          "melvorD:Fishing",
+          "melvorD:Cooking",
+          "melvorD:Farming"
+        ],
+        "allowDungeonLevelCapIncrease": false,
+        "allowXPOverLevelCap": false,
+        "disablePreservation": false,
+        "disableItemDoubling": false,
+        "hasActiveGameplay": false,
+        "allowAncientRelicDrops": false
+      }
+    ]
+  }
+}

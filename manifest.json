@@ -1,0 +1,5 @@
+{
+  "namespace": "phoenixgamemodemanager",
+  "icon": "img/icon.png",
+  "setup": "setup.mjs"
+}
