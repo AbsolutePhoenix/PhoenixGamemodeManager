@@ -1,12 +1,16 @@
 import ModData from '../data/gamemodes.json'
 import { CategoryData, CategoryMappingData } from "./interfaces/CategoryInterfaces";
 import { classicMelvorCategory, limitedEventCategory, otherModdedCategory } from "./references/Categories";
-import { addCategoryToHTML, htmlCharacterSelectionContents } from "./html/HTMLConstants";
 import '../img/icon.png'
 import '../img/gamemode_bday.png'
 import '../css/styles.css'
 
 import {openGamemodeInterface, openStyleInterface} from './webfunctions/GamemodeFunctions'
+import {
+  CharacterSelectionPageElement,
+  replaceCharacterSelectionPage
+} from "../components/CharacterSelectionPageElement";
+import {addCategoryToHTML} from "./utilities/CategoryManagment";
 
 let addedCategories: Map<string, CategoryData> = new Map();
 let mappedCategoryItems: Map<string, string> = new Map();
@@ -42,12 +46,27 @@ function characterSelectionLoaded(context: Modding.ModContext): void {
   registerCategory(limitedEventCategory);
   registerCategory(otherModdedCategory);
 
-  const selectionPage = document.querySelector("#character-selection-page-3");
-  if (selectionPage) selectionPage.innerHTML = htmlCharacterSelectionContents;
+// Call the function where needed
+  replaceCharacterSelectionPage()
+      .then(() => {
+        // Now the character selection page is replaced and connected
+        // You can safely add categories
+        addedCategories.forEach((category) => {
+          addCategoryToHTML(
+              category.buttonClass,
+              category.textClass,
+              category.id,
+              category.name,
+              category.description,
+              category.imageUrl
+          );
+        });
 
-  addedCategories.forEach((category) => {
-    addCategoryToHTML(category.buttonClass, category.textClass, category.id, category.name, category.description, category.imageUrl);
-  });
+        // Rest of your code that depends on the container being connected
+      })
+      .catch((error) => {
+        console.error('Failed to replace character selection page:', error);
+      });
 
   const gamemodeSelectionContainer = document.getElementById('phoenix-gamemode-selection');
   if (gamemodeSelectionContainer) {
