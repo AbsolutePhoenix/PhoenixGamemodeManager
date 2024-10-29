@@ -10,7 +10,7 @@ import {
   CharacterSelectionPageElement,
   replaceCharacterSelectionPage
 } from "../components/CharacterSelectionPageElement";
-import {addCategoryToHTML} from "./utilities/CategoryManagment";
+import {addCategoryToHTML} from "../components/CategoryButtonElement";
 
 let addedCategories: Map<string, CategoryData> = new Map();
 let mappedCategoryItems: Map<string, string> = new Map();
@@ -48,27 +48,9 @@ function characterSelectionLoaded(context: Modding.ModContext): void {
 
 // Call the function where needed
   replaceCharacterSelectionPage()
-      .then(() => {
-        // Now the character selection page is replaced and connected
-        // You can safely add categories
-        addedCategories.forEach((category) => {
-          addCategoryToHTML(
-              category.buttonClass,
-              category.textClass,
-              category.id,
-              category.name,
-              category.description,
-              category.imageUrl
-          );
-        });
+  addedCategories.forEach(category => addCategoryToHTML(category.buttonClass, category.textClass, category.id, category.name, category.description, category.imageUrl));
 
-        // Rest of your code that depends on the container being connected
-      })
-      .catch((error) => {
-        console.error('Failed to replace character selection page:', error);
-      });
-
-  const gamemodeSelectionContainer = document.getElementById('phoenix-gamemode-selection');
+  const gamemodeSelectionContainer = CharacterSelectionPageElement.phoenixGamemodeSelection
   if (gamemodeSelectionContainer) {
     game.gamemodes.forEach((gamemode) => {
       if (gamemode.id === "melvorD:Unset") return;

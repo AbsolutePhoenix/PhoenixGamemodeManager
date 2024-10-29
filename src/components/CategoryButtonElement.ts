@@ -1,4 +1,5 @@
 import { getTemplateNode } from '../ts/utilities/utils';
+import {CharacterSelectionPageElement} from "./CharacterSelectionPageElement";
 
 declare const game: any;
 
@@ -11,10 +12,7 @@ export class CategoryButtonElement extends HTMLElement {
 
     constructor() {
         super();
-        // Clone the template content
         this.content = getTemplateNode('category-button-template');
-
-        // Get references to elements within the template
         this.button = this.content.querySelector('button.btn') as HTMLButtonElement;
         this.bgDiv = this.content.querySelector('div.bg-gamemode') as HTMLDivElement;
         this.nameElement = this.content.querySelector('h5.font-w600') as HTMLHeadingElement;
@@ -22,23 +20,17 @@ export class CategoryButtonElement extends HTMLElement {
     }
 
     connectedCallback() {
-        // Append the content to the custom element
         this.appendChild(this.content);
-
-        // Set up event listener
         this.button.addEventListener('click', () => {
             const categoryId = this.getAttribute('category-id');
             if (categoryId) {
                 game.phoenixgamemanager.openGamemodeInterface(categoryId);
             }
         });
-
-        // Initialize the element based on current attributes
         this.initializeAttributes();
     }
 
     private initializeAttributes() {
-        // For each observed attribute, apply the value
         CategoryButtonElement.observedAttributes.forEach((name) => {
             const value = this.getAttribute(name);
             if (value !== null) {
@@ -48,22 +40,11 @@ export class CategoryButtonElement extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return [
-            'button-class',
-            'text-class',
-            'category-id',
-            'category-name',
-            'category-description',
-            'category-image-url',
+        return ['button-class', 'text-class', 'category-id', 'category-name', 'category-description', 'category-image-url',
         ];
     }
 
-    attributeChangedCallback(
-        name: string,
-        oldValue: string | null,
-        newValue: string | null
-    ) {
-        // Only update if the element is connected
+    attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
         if (this.isConnected) {
             this.updateAttribute(name, newValue);
         }
@@ -103,5 +84,26 @@ export class CategoryButtonElement extends HTMLElement {
                 }
                 break;
         }
+    }
+}
+
+window.customElements.define('category-button', CategoryButtonElement);
+
+export function addCategoryToHTML(buttonClass: string, textClass: string, categoryId: string, categoryName: string, categoryDescriptionArray: string[], categoryImageURL: string): void {
+    const container = CharacterSelectionPageElement.categoryContainer;
+
+    if (container) {
+        const categoryButton = document.createElement('category-button') as CategoryButtonElement;
+
+        // Set attributes
+        categoryButton.setAttribute('button-class', buttonClass);
+        categoryButton.setAttribute('text-class', textClass);
+        categoryButton.setAttribute('category-id', categoryId);
+        categoryButton.setAttribute('category-name', categoryName);
+        categoryButton.setAttribute('category-description', categoryDescriptionArray.join('\n'));
+        categoryButton.setAttribute('category-image-url', categoryImageURL);
+
+        // Append the custom element to the container
+        container.appendChild(categoryButton);
     }
 }
