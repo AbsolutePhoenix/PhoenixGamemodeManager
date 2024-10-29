@@ -40,8 +40,7 @@ export class CategoryButtonElement extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['button-class', 'text-class', 'category-id', 'category-name', 'category-description', 'category-image-url',
-        ];
+        return ['button-class', 'text-class', 'category-id', 'category-name', 'category-description', 'category-image-url',];
     }
 
     attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
@@ -70,12 +69,7 @@ export class CategoryButtonElement extends HTMLElement {
             case 'category-description':
                 if (value && this.descriptionContainer) {
                     const descriptionLines = value.split('\n');
-                    this.descriptionContainer.innerHTML = descriptionLines
-                        .map(
-                            (line) =>
-                                `<h5 class="font-w400 font-size-sm mb-1 text-white">${line}</h5>`
-                        )
-                        .join('');
+                    this.descriptionContainer.innerHTML = descriptionLines.map((line) => `<h5 class="font-w400 font-size-sm mb-1 text-white">${line}</h5>`).join('');
                 }
                 break;
             case 'category-image-url':
