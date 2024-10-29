@@ -93,7 +93,7 @@ export function addCategoryToHTML(buttonClass: string, textClass: string, catego
     const container = CharacterSelectionPageElement.categoryContainer;
 
     if (container) {
-        const categoryButton = document.createElement('category-button') as CategoryButtonElement;
+        const categoryButton = new CategoryButtonElement();
 
         // Set attributes
         categoryButton.setAttribute('button-class', buttonClass);

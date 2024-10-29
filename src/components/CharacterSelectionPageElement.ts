@@ -27,7 +27,7 @@ export function replaceCharacterSelectionPage(): void {
 
     if (selectionPage) {
         selectionPage.innerHTML = '';
-        const characterSelectionPage = document.createElement('character-selection-page') as CharacterSelectionPageElement;
+        const characterSelectionPage = new CharacterSelectionPageElement()
         selectionPage.append(characterSelectionPage);
     } else {
         console.error('Element with ID "#character-selection-page-3" not found.');
