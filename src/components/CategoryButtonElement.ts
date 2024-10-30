@@ -1,35 +1,27 @@
-import { getTemplateNode } from '../ts/utilities/utils';
-import {CharacterSelectionPageElement} from "./CharacterSelectionPageElement";
-
 declare const game: any;
 
 export class CategoryButtonElement extends HTMLElement {
-    private content: DocumentFragment;
-    private button: HTMLButtonElement | null;
-    private bgDiv: HTMLDivElement | null;
-    private nameElement: HTMLHeadingElement | null;
-    private descriptionContainer: HTMLDivElement | null;
+    private readonly content: DocumentFragment;
+    private readonly button: HTMLButtonElement;
+    private readonly backgroundContainer: HTMLDivElement;
+    private readonly nameElement: HTMLHeadingElement;
+    private readonly descriptionContainer: HTMLDivElement;
 
     constructor() {
         super();
-        this.content = getTemplateNode('category-button-template');
-        this.button = this.content.querySelector('button.btn') as HTMLButtonElement;
-        this.bgDiv = this.content.querySelector('div.bg-gamemode') as HTMLDivElement;
-        this.nameElement = this.content.querySelector('h5.font-w600') as HTMLHeadingElement;
-        this.descriptionContainer = this.content.querySelector('div.description') as HTMLDivElement;
+        this.content = new DocumentFragment();
+        this.content.append(getTemplateNode('category-button-template'));
+        this.button = getElementFromFragment(this.content, "phoenix-category-button", "button");
+        this.backgroundContainer = getElementFromFragment(this.content, "phoenix-background-container", "div");
+        this.nameElement = getElementFromFragment(this.content, "phoenix-name-header", "h5");
+        this.descriptionContainer = getElementFromFragment(this.content, "phoenix-description-container", "div");
     }
 
     connectedCallback() {
         this.appendChild(this.content);
-        this.button.addEventListener('click', () => {
-            const categoryId = this.getAttribute('category-id');
-            if (categoryId) {
-                game.phoenixgamemanager.openGamemodeInterface(categoryId);
-            }
-        });
         this.initializeAttributes();
     }
-
+    getButton(): HTMLButtonElement {return this.button;}
     private initializeAttributes() {
         CategoryButtonElement.observedAttributes.forEach((name) => {
             const value = this.getAttribute(name);
@@ -73,8 +65,8 @@ export class CategoryButtonElement extends HTMLElement {
                 }
                 break;
             case 'category-image-url':
-                if (value && this.bgDiv) {
-                    this.bgDiv.style.backgroundImage = `url('${value}')`;
+                if (value && this.backgroundContainer) {
+                    this.backgroundContainer.style.backgroundImage = `url('${value}')`;
                 }
                 break;
         }
@@ -82,22 +74,3 @@ export class CategoryButtonElement extends HTMLElement {
 }
 
 window.customElements.define('category-button', CategoryButtonElement);
-
-export function addCategoryToHTML(buttonClass: string, textClass: string, categoryId: string, categoryName: string, categoryDescriptionArray: string[], categoryImageURL: string): void {
-    const container = CharacterSelectionPageElement.categoryContainer;
-
-    if (container) {
-        const categoryButton = new CategoryButtonElement();
-
-        // Set attributes
-        categoryButton.setAttribute('button-class', buttonClass);
-        categoryButton.setAttribute('text-class', textClass);
-        categoryButton.setAttribute('category-id', categoryId);
-        categoryButton.setAttribute('category-name', categoryName);
-        categoryButton.setAttribute('category-description', categoryDescriptionArray.join('\n'));
-        categoryButton.setAttribute('category-image-url', categoryImageURL);
-
-        // Append the custom element to the container
-        container.appendChild(categoryButton);
-    }
-}

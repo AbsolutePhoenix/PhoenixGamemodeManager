@@ -7,10 +7,8 @@ import '../css/styles.css'
 
 import {openGamemodeInterface, openStyleInterface} from './webfunctions/GamemodeFunctions'
 import {
-  CharacterSelectionPageElement,
-  replaceCharacterSelectionPage
+  CharacterSelectionPageElement
 } from "../components/CharacterSelectionPageElement";
-import {addCategoryToHTML} from "../components/CategoryButtonElement";
 
 let addedCategories: Map<string, CategoryData> = new Map();
 let mappedCategoryItems: Map<string, string> = new Map();
@@ -46,26 +44,7 @@ function characterSelectionLoaded(context: Modding.ModContext): void {
   registerCategory(limitedEventCategory);
   registerCategory(otherModdedCategory);
 
-// Call the function where needed
-  replaceCharacterSelectionPage()
-  addedCategories.forEach(category => addCategoryToHTML(category.buttonClass, category.textClass, category.id, category.name, category.description, category.imageUrl));
-
-  const gamemodeSelectionContainer = CharacterSelectionPageElement.phoenixGamemodeSelection
-  if (gamemodeSelectionContainer) {
-    game.gamemodes.forEach((gamemode) => {
-      if (gamemode.id === "melvorD:Unset") return;
-
-      const gamemodeSelection = createElement("gamemode-selection");
-      gamemodeSelection.setGamemode(gamemode);
-
-      const categoryClass = mappedCategoryItems.get(gamemode.id) ? `phoenix-cat-${mappedCategoryItems.get(gamemode.id)}` :
-          gamemode.isEvent ? "phoenix-cat-limitedevent" : "phoenix-cat-other";
-
-      gamemodeSelection.classList.add(categoryClass);
-      gamemodeSelection.style.display = 'none';
-      gamemodeSelectionContainer.append(gamemodeSelection);
-    });
-  }
+  new CharacterSelectionPageElement(addedCategories, mappedCategoryItems)
 }
 
 function registerCategory(categoryData: CategoryData): void {
