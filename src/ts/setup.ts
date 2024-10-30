@@ -35,7 +35,14 @@ function characterSelectionLoaded(context: Modding.ModContext): void {
   registerCategory(limitedEventCategory);
   registerCategory(otherModdedCategory);
 
-  new CharacterSelectionPageElement(addedCategories, mappedCategoryItems)
+  const cspEle = new CharacterSelectionPageElement(addedCategories, mappedCategoryItems);
+  const selectionPage = document.querySelector('#character-selection-page-3') as HTMLElement;
+  if (selectionPage) {
+    selectionPage.innerHTML = '';
+    selectionPage.append(cspEle);
+  } else {
+    console.error('Element with ID "#character-selection-page-3" not found.');
+  }
 }
 
 function registerCategory(categoryData: CategoryData): void {

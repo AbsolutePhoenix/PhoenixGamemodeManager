@@ -1,5 +1,3 @@
-declare const game: any;
-
 export class CategoryButtonElement extends HTMLElement {
     private readonly content: DocumentFragment;
     private readonly button: HTMLButtonElement;

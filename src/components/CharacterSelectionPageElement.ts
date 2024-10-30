@@ -20,7 +20,6 @@ export class CharacterSelectionPageElement extends HTMLElement {
         this.gamemodeContainer = getElementFromFragment(this.content, "phoenix-gamemode-container", "div");
         this.gamemodeSelection = getElementFromFragment(this.content, "phoenix-gamemode-selection", "div")
         this.backButton = getElementFromFragment(this.content, "phoenix-back-button", "button");
-        this.replaceCharacterSelectionPage()
         this.addCategories(categories);
         this.addGamemodes(mappedGamemodes)
     }
@@ -52,17 +51,6 @@ export class CharacterSelectionPageElement extends HTMLElement {
         if (this.categoryContainer) this.categoryContainer.style.display = "none";
         if (this.gamemodeHeader) this.gamemodeHeader.style.display = "";
         if (this.gamemodeSelection) this.gamemodeContainer.style.display = "";
-    }
-
-    replaceCharacterSelectionPage(){
-        const selectionPage = document.querySelector('#character-selection-page-3') as HTMLElement;
-
-        if (selectionPage) {
-            selectionPage.innerHTML = '';
-            selectionPage.append(this);
-        } else {
-            console.error('Element with ID "#character-selection-page-3" not found.');
-        }
     }
 
     addCategories(categories: Map<string, CategoryData>) {
