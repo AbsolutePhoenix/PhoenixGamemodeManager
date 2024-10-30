@@ -5,19 +5,12 @@ import '../img/icon.png'
 import '../img/gamemode_bday.png'
 import '../css/styles.css'
 
-import {openGamemodeInterface, openStyleInterface} from './webfunctions/GamemodeFunctions'
 import {
   CharacterSelectionPageElement
 } from "../components/CharacterSelectionPageElement";
 
 let addedCategories: Map<string, CategoryData> = new Map();
 let mappedCategoryItems: Map<string, string> = new Map();
-
-declare global {
-  interface Game {
-    phoenixgamemanager: any;
-  }
-}
 
 export async function setup(ctx: Modding.ModContext): Promise<void> {
   const api = ctx.api;
@@ -26,8 +19,6 @@ export async function setup(ctx: Modding.ModContext): Promise<void> {
 
   await api({ registerCategory, mapGamemodeToCategory });
   fixEventDates();
-
-  game.phoenixgamemanager = {openGamemodeInterface, openStyleInterface};
 
   registerCategory(classicMelvorCategory);
 
